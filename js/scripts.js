@@ -26,26 +26,41 @@ var eratosthenize = function(number) {
   return numbers;
 }
 
+
+$(document).ready(function() {
+  $("form#input_form").submit(function(event) {
+    var inputNumber  = $("input#number").val();
+
+    var primes = eratosthenize(inputNumber);
+
+    $("#primes").text(primes.join(", "));
+    $("#result").show()
+
+    event.preventDefault();
+  });
+});
+
+
 // New and Much Improved Alex and Vaughn Sieve:
-//
-// var sieveMe = function(number) {
-//   var primes = [];
-//
-//   for (var i = 2; i <= number; i++) {
-//     if (isPrime(i)) {
-//       primes.push(i)
-//     }
-//   }
-//
-//   return primes;
-// }
-//
-// var isPrime = function(number) {
-//   var prime = true;
-//   for (var i = 2; i < number; i++) {
-//      if (number % i === 0) {
-//        prime = false;
-//      }
-//   }
-//   return prime;
-// }
+
+var getSieved = function(number) {
+  var primes = [];
+
+  for (var i = 2; i <= number; i++) {
+    if (isPrime(i)) {
+      primes.push(i)
+    }
+  }
+
+  return primes;
+}
+
+var isPrime = function(number) {
+  var prime = true;
+  for (var i = 2; i < number; i++) {
+     if (number % i === 0) {
+       prime = false;
+     }
+  }
+  return prime;
+}
