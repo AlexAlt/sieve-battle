@@ -31,9 +31,32 @@ $(document).ready(function() {
   $("form#input_form").submit(function(event) {
     var inputNumber  = $("input#number").val();
 
-    var primes = eratosthenize(inputNumber);
+    // get execution time for Sieve of Eratosthenes
+    var start = performance.now();
+    var ePrimes = eratosthenize(inputNumber);
+    var end = performance.now();
+    var eTime = end - start;
 
-    $("#primes").text(primes.join(", "));
+    // get execution time for Get Sieved
+    start = performance.now();
+    var gPrimes = getSieved(inputNumber);
+    end = performance.now();
+    var gTime = end - start;
+
+    if (gTime < eTime) {
+      $('#winning-sieve').text('Get Sieved');
+      $('#winning-time').text(gTime);
+      $('#losing-sieve').text('Sieve of Eratosthenes');
+      $('#losing-time').text(eTime);
+      $("#primes").text(gPrimes.join(", "));
+    } else {
+      $('#winning-sieve').text('Sieve of Eratosthenes');
+      $('#winning-time').text(eTime);
+      $('#losing-sieve').text('Get Sieved');
+      $('#losing-time').text(gTime);
+      $("#primes").text(ePrimes.join(", "));
+    }
+
     $("#result").show()
 
     event.preventDefault();

@@ -10,7 +10,7 @@
   </head>
   <body>
     <div class="jumbotron">
-      <h2><center>Try your hand at the <i>Sieve of Era Toss The Knees</i></center></h2>
+      <h2><center>Which is faster? <i>Sieve of Era Toss The Knees</i> or <i>Get Sieved<i> ?!</center></h2>
     </div>
     <div class="container">
       <form id="input_form">
@@ -18,10 +18,12 @@
           <label for="number">Number:</label>
           <input type="number" id="number" required>
         </div>
-        <button class="btn btn-success" type="submit">Eratosthenize!</button>
+        <button class="btn btn-success" type="submit">Battle!</button>
       </form>
 
       <div id="result">
+        <h4>The fastest sieve was: <i><span id="winning-sieve"></span></i> clocking in at <i><span id="winning-time"></span> ms</i></h4>
+        <h5>The slowest sieve was: <i><span id="losing-sieve"></span></i> clocking in at <i><span id="losing-time"></span> ms</i></h5>
         Your list of primes is: <i><span id="primes"></span><i>
       </div>
     </div>
