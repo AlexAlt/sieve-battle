@@ -10,13 +10,14 @@
   </head>
   <body>
     <div class="jumbotron">
-      <h2><center>Which is faster? <i>Sieve of Era Toss The Knees</i> or <i>Get Sieved<i> ?!</center></h2>
+      <h2><center>Which is faster?</center></h2>
+      <h3><center><i>Sieve of Era Toss The Knees</i> v. <i>Get Sieved<i></center></h3>
     </div>
     <div class="container">
       <form id="input_form">
         <div class="form-group">
           <label for="number">Number:</label>
-          <input type="number" id="number" required>
+          <input type="number" id="number" required max="10000" min="2" class="form-control">
         </div>
         <button class="btn btn-success" type="submit">Battle!</button>
       </form>
@@ -31,10 +32,15 @@
         </h4>
         <h5>
           <span class="octicon octicon-trashcan"></span>
+          <span class="octicon octicon-trashcan"></span>
           The slowest sieve was: <i><span id="losing-sieve"></span></i> clocking in at <i><span id="losing-time"></span> ms</i>
+          <span class="octicon octicon-trashcan"></span>
+          <span class="octicon octicon-trashcan"></span>
         </h5>
         Your list of primes is: <i><span id="primes"></span><i>
       </div>
+
+
     </div>
   </body>
 </html>

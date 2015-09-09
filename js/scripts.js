@@ -31,6 +31,7 @@ $(document).ready(function() {
   $("form#input_form").submit(function(event) {
     var inputNumber  = $("input#number").val();
 
+
     // get execution time for Sieve of Eratosthenes
     var start = performance.now();
     var ePrimes = eratosthenize(inputNumber);
@@ -57,7 +58,7 @@ $(document).ready(function() {
       $("#primes").text(ePrimes.join(", "));
     }
 
-    $("#result").show()
+    $("#result").show();
 
     event.preventDefault();
   });

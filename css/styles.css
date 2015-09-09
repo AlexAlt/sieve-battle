@@ -1,3 +1,7 @@
 #result {
   display: none;
 }
+
+#no-result {
+  display: none;
+}
